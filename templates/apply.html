@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/both.css') }}" />
+  <style>
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        position: relative;
+    }
+    .back {
+        margin-left: 18px;
+    }
+    .name {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nameshow {
+        margin-right: 12px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 16px;
+        background-color: white;
+        margin: 0 auto;
+        margin-top: 100px;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        margin: 10px 0 5px 0;
+    }
+
+    input[type=text] {
+        padding: 5px; 
+        margin: 5px 0 15px 0;
+    }
+
+    input[type=submit] {
+        background-color: #18A8F1;
+        color: white;
+        padding: 10px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+      <p onclick="history.back();" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
+      <p class="name">수강신청</p>
+  </div>
+  <div class="content">
+    <h2>수강신청</h2>
+    <p>이름: {{ name }}</p>
+    <form method="post" autocomplete="off">
+        <label for="courseName">신청할 강좌:</label>
+        <div style="display: flex;flex-wrap: wrap;">
+          {% for lecture in lectures %}
+            <label style="flex-basis: 50%;"><input type="checkbox" name="{{ lecture.name }}" value="{{ lecture.name }}" >
+            <span style="vertical-align:top;">{{ lecture.name }}</span></label>
+          {% endfor %}
+        </div>
+        <input type="submit" id="myInput" value="3월 4일 오후 8시 수강신청 시작">
+    </form>
+  </div>
+
+  <div class="navbar">
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/"><i class="fa fa-fw fa-home"></i>홈</a> 
+    <a  href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/notice"><i class="fa fa-fw fa-bell"></i>공지</a> 
+    <a class="active" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/lesson"><i class="fa fa-fw fa-graduation-cap"></i>수업</a>
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/account"><i class="fa fa-fw fa-user"></i>계정</a>
+  </div>
+  <script>
+    name = getCookie("name");
+    if (name != "null") {
+      const nametext = document.querySelector(".nameshow");
+      nametext.innerHTML = name;
+    }
+  </script>
+
+</body>
+</html>

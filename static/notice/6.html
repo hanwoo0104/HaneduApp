@@ -1,0 +1,11 @@
+<h2>수강신청 안내</h2>
+<p>2024년 3월 4일부터 수업 > 수강신청 메뉴에서 수강신청이 가능합니다.</a></p>
+<br>
+<p>▶️학원설명회 영상</p>
+<iframe style="width: 100vw;height: 30vh;" src="https://www.youtube.com/embed/1IwZOT_NkeM?si=99C8aXWR7PjGMtd3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<br>
+<p>▶️강좌목록</p>
+{% for lecture in lectures %}
+<h3>{{ lecture.name }}</h3>
+<p>강사: {{ lecture.teacher }}<br>총 {{ lecture.week }}주차 구성<br>{{ lecture.info }}</p>
+{% endfor %}

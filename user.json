@@ -1,0 +1,30 @@
+[
+    {
+        "name": "한승우",
+        "password": "56ccc4dcfc96534b06fc0c08a301be24f13b491484d5d984953cc0dba9bbb89a",
+        "school": "신사중학교",
+        "grade": "2학년",
+        "class": "00/99"
+    },
+    {
+        "name": "임채언",
+        "password": "12b408838e33f12bf8886792e6d44de0d9623e2bbf833b70f9f2e13fdf802706",
+        "school": "신동중학교",
+        "grade": "2학년",
+        "class": "00/99"
+    },
+    {
+        "name": "박서준",
+        "password": "7bc646f5f6101293bbae1a545834040a9f990ed6f399c4864b5c37c32bdf9791",
+        "school": "신사중학교",
+        "grade": "2학년",
+        "class": "00/99"
+    },
+    {
+        "name": "테스트학생",
+        "password": "12b408838e33f12bf8886792e6d44de0d9623e2bbf833b70f9f2e13fdf802706",
+        "school": "테스트학교",
+        "grade": "테스트학년",
+        "class": "00/99"
+    }
+]

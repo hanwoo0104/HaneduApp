@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/both.css') }}" />
+  <style>
+    input {
+      border: 1.8px solid black;
+      border-radius: 5px;
+      outline: none;
+      width: 65%;
+      height: 30px;
+      margin-bottom: 3px;
+    }
+
+    button {
+      border: 1px solid white;
+      border-radius: 5px;
+      outline: none;
+      width: 65%;
+      height: 40px;
+    }
+
+    input:focus {
+      animation: cursor-blink 1s infinite;
+    }
+    .loginbtn {
+      background-color: #18A8F1;
+      border-radius: 5px;
+      color: white;
+      width: 40%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="top" style="display:flex;justify-content:space-between;">
+    <h1 style="margin-left: 12px;">에러</h1>
+    <p style="margin-right: 12px;"></p>
+  </div>
+  <div class="content">
+    <center>
+      <h2>문제가 발생했습니다</h2>
+      <p>로그아웃 후 재로그인 해보시고, 오류가 지속되면 관리자에게 문의해주세요</p>
+    </center>
+  </div>
+
+  <div class="navbar">
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/"><i class="fa fa-fw fa-home"></i>홈</a> 
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/notice"><i class="fa fa-fw fa-bell"></i>공지</a> 
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/lesson"><i class="fa fa-fw fa-graduation-cap"></i>수업</a>
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/account"><i class="fa fa-fw fa-user"></i>계정</a>
+  </div>
+  
+</body>
+</html>

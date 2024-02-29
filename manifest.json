@@ -1,0 +1,13 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "한에듀교육그룹",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "한에듀",
+  "start_url": "/",
+  "theme_color": "#18a8f1",
+  "description": "한에듀교육그룹 학원생, 선생님을 위한 관리 앱입니다.",
+  "lang": "ko"
+}

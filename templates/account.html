@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/both.css') }}" />
+</head>
+<body>
+  <div class="top" style="display:flex;justify-content:space-between;">
+    <h1 style="margin-left: 12px;">계정</h1>
+    <p class="nameshow" style="margin-right: 12px;">로그인을 해주세요</p>
+  </div>
+  <div class="content">
+    <center>
+      <p style="text-align: left;">계정 정보</p>
+      <div class="selection" style="text-align: left;">
+        <div style="margin: 12px 12px 12px 12px;" >
+          <p class="gray">이름: <span class="name" style="color:black;">{{name}}</span></p>
+          <p class="gray">학교: <span class="school" style="color:black;">{{school}}</span></p>
+          <p class="gray">학년: <span class="grade" style="color:black;">{{grade}}</span></p>
+        </div>
+      </div>
+
+      <div class="selection" style="text-align: left;">
+        <div style="margin: 12px 12px 12px 12px;" >
+          <p>Copyright © 2024 한에듀교육그룹. <br> All rights reserved.</p>
+        </div>
+      </div>
+
+      <div class="login" style="display:block;">
+        <p>아직 로그인을 안하셨나요?</p>
+        <a style="text-decoration:none;color: #18A8F1;" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/login">로그인 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="logout" style="display:none;">
+        <a style="text-decoration:none;color: #18A8F1;" onclick='document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";window.location.reload()'>로그아웃 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </div>
+    </center>
+  </div>
+
+  <div class="navbar">
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/"><i class="fa fa-fw fa-home"></i>홈</a> 
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/notice"><i class="fa fa-fw fa-bell"></i>공지</a> 
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/lesson"><i class="fa fa-fw fa-graduation-cap"></i>수업</a>
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/account" class="active"><i class="fa fa-fw fa-user"></i>계정</a>
+  </div>
+  <script>
+    name = getCookie("name");
+    if (name != "null") {
+      const nametext = document.querySelector(".nameshow");
+      nametext.innerHTML = name;
+      const logingo = document.querySelector(".login");
+      logingo.style.display = "none";
+      const logoutgo = document.querySelector(".logout");
+      logoutgo.style.display = "block";
+    }
+  </script>
+</body>
+</html>

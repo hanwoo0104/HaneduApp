@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/both.css') }}" />
+  <style>
+    input, textarea {
+      border: 1.8px solid black;
+      border-radius: 5px;
+      outline: none;
+      width: 65%;
+      height: 30px;
+      margin-bottom: 3px;
+    }
+
+    button {
+      border: 1px solid white;
+      border-radius: 5px;
+      outline: none;
+      width: 65%;
+      height: 40px;
+    }
+
+    input:focus {
+      animation: cursor-blink 1s infinite;
+    }
+    .loginbtn {
+      background-color: #18A8F1;
+      border-radius: 5px;
+      color: white;
+      width: 40%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        position: relative;
+    }
+    .back {
+        margin-left: 18px;
+    }
+    .name {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .nameshow {
+        margin-right: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="top">
+      <p onclick="history.back();" class="back"><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
+      <p class="name">수업만들기</p>
+  </div>
+  <div class="content">
+    <center>
+      <form class="signup" method="post" autocomplete="off" style="margin-top: 50px;">
+        <h2>수업 만들기</h2>
+
+        <div class="signup__field">
+          <input class="signup__input" type="text" name="name" id="name" placeholder="제목" required />
+        </div>
+
+        <div class="signup__field">
+          <input class="signup__input" type="number" name="week" id="week" placeholder="수업 주차(숫자만 입력)" required />
+        </div>
+
+        <div class="signup__field">
+          <textarea style="height: 150px;" class="signup__input" type="text" name="info" id="info" placeholder="수업 설명(무슨 요일 수업인지는 무조건 들어가야 합니다.)" required></textarea>
+        </div>
+
+        <button type="submit" class="loginbtn">수업 만들기</button>
+      </form>
+    </center>
+  </div>
+
+  <div class="navbar">
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/"><i class="fa fa-fw fa-home"></i>홈</a> 
+    <a  href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/notice"><i class="fa fa-fw fa-bell"></i>공지</a> 
+    <a class="active" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/lesson"><i class="fa fa-fw fa-graduation-cap"></i>수업</a>
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/account"><i class="fa fa-fw fa-user"></i>계정</a>
+  </div>
+  <script>
+    name = getCookie("name");
+    if (name != "null") {
+      const nametext = document.querySelector(".nameshow");
+      nametext.innerHTML = name;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="{{ url_for('static', filename='js/cookie.js') }}"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/both.css') }}" />
+</head>
+<body>
+  <div class="top" style="display:flex;justify-content:space-between;">
+    <h1 style="margin-left: 12px;">수업</h1>
+    <p class="nameshow" style="margin-right: 12px;">로그인을 해주세요</p>
+  </div>
+
+  <div class="content">
+    <p>선생님용 기능</p>
+    <a style="text-decoration:none;color: #18A8F1;" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/create">수업 생성하기 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+    
+    <p>수업목록</p>
+    <center>
+      <div class="selection" style="text-align: left;">
+        <div class="notice" style="margin-left: 10px;">
+            {% for post in postings %}
+              <hr>
+              <h3 onclick="location.href='https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/classinfo/{{ post.code }}'">[{{ post.code }}] {{ post.name }}</h3>
+            {% endfor %}
+            <hr>
+        </div>
+      </div>
+      <div class="login" style="display: block;">
+        <p>로그인을 하면 수업목록이 나타납니다</p>
+        <a style="text-decoration: none;color:#18A8F1;" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/login">로그인 <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+      </div>
+    </center>
+  </div>
+
+  <div class="navbar">
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/" ><i class="fa fa-fw fa-home"></i>홈</a> 
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/notice" ><i class="fa fa-fw fa-bell"></i>공지</a> 
+    <a class="active" href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/lesson"><i class="fa fa-fw fa-graduation-cap" ></i>수업</a>
+    <a href="https://32fcfb33-7a7b-4b47-8c3d-4e2b0260a1bb-00-3c18wu9dtnmx2.janeway.replit.dev/account"><i class="fa fa-fw fa-user"></i>계정</a>
+  </div>
+  <script>
+    name = getCookie("name");
+    if (name != "null") {
+      const nametext = document.querySelector(".nameshow");
+      nametext.innerHTML = name;
+      const logingo = document.querySelector(".login");
+      logingo.style.display = "none";
+    }
+  </script>
+</body>
+</html>
